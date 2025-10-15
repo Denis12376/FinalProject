@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - FSTR_DB_HOST=db
+      - FSTR_DB_PORT=5432
+      - FSTR_DB_LOGIN=postgres
+      - FSTR_DB_PASS=password
+      - FSTR_DB_NAME=mountain_passes
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=mountain_passes
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
