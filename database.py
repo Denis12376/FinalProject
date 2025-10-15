@@ -4,6 +4,7 @@ from psycopg2.extras import RealDictCursor
 from typing import Dict, Any, List, Optional
 
 
+
 class DatabaseManager:
     def __init__(self):
         self.db_config = {
