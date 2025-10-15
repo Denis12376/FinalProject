@@ -270,7 +270,6 @@ async def http_exception_handler(request, exc):
 
 
 
-
 @app.exception_handler(422)
 async def validation_exception_handler(request, exc):
     """Обработчик ошибок валидации"""
