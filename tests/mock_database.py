@@ -166,7 +166,6 @@ class MockDatabaseManager:
                     })
 
             return result
-
         except Exception as e:
             logger.error(f"Мок: ошибка при получении по email: {str(e)}")
             return []
