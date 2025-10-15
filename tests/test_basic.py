@@ -57,7 +57,6 @@ class TestBasicEndpoints:
         response = client.post("/submitData", json=invalid_data)
         assert response.status_code == 422  # Validation error
 
-
 def test_swagger_docs():
     """Тест доступности документации"""
     response = client.get("/docs")
