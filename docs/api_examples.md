@@ -2,7 +2,6 @@
 
 ## Добавление нового перевала
 
-
 ```bash
 curl -X POST "http://localhost:8000/submitData" \
 -H "Content-Type: application/json" \
