@@ -45,6 +45,5 @@ def run_tests():
         print("\n💥 Некоторые тесты не пройдены")
         return 1
 
-
 if __name__ == "__main__":
     sys.exit(run_tests())

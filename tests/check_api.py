@@ -140,6 +140,5 @@ def check_api():
         traceback.print_exc()
         checks_failed += 1
 
-
 if __name__ == "__main__":
     check_api()

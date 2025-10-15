@@ -161,6 +161,5 @@ def test_full_workflow():
 
     print("\n🎉 Все тесты пройдены успешно! API работает без реальной базы данных.")
 
-
 if __name__ == "__main__":
     test_full_workflow()
